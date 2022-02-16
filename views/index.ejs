@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+   <h1>All users</h1> 
+   <form action="/users" method="POST">
+    Name:  <input  type="text" id="name" name="name" required><br><br>
+    Department: <input type="text" id="department" name="department"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+   <% if (users.length > 0) { %>
+    <% users.forEach(user =>{ %>
+       <a href="/users/<%= user._id%>">
+        <h3><%=user.name %></h3>
+       </a>
+        <% }) %>
+        <% } %>
+</body>
+</html>
